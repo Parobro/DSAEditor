@@ -1,2 +1,3 @@
 # DSAEditor
  
+WPF GUI ONLY
