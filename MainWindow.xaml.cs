@@ -9,14 +9,12 @@ namespace DSAEditor
             InitializeComponent();
         }
 
-        // Event-Handler für den Button "Bearbeiten"
+        // Navigation zwischen Tabs (Hier später Logik hinzufügen)
         private void EditQuickAccess(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Schnellzugriff bearbeiten!");
         }
 
-
-        // Navigation zwischen Tabs (Hier später Logik hinzufügen)
         private void NavigateToCharacter(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Charakterseite anzeigen!");
