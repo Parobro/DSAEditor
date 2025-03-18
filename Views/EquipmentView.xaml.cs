@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DSAEditor
+namespace DSAEditor.Views
 {
     /// <summary>
-    /// Interaktionslogik für EquipmentPage.xaml
+    /// Interaktionslogik für EquipmentView.xaml
     /// </summary>
-    public partial class EquipmentPage : UserControl
+    public partial class EquipmentView : UserControl
     {
-        public EquipmentPage()
+        public EquipmentView()
         {
             InitializeComponent();
         }

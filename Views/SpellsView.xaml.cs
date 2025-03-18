@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DSAEditor
+namespace DSAEditor.Views
 {
     /// <summary>
-    /// Interaktionslogik für SettingsPage.xaml
+    /// Interaktionslogik für SpellsView.xaml
     /// </summary>
-    public partial class SettingsPage : UserControl
+    public partial class SpellsView : UserControl
     {
-        public SettingsPage()
+        public SpellsView()
         {
             InitializeComponent();
         }

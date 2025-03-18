@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using DSAEditor.Views;
+
 
 namespace DSAEditor
 {
@@ -9,40 +13,40 @@ namespace DSAEditor
             InitializeComponent();
         }
 
-        // Navigation zwischen Tabs (Hier später Logik hinzufügen)
-        private void EditQuickAccess(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Schnellzugriff bearbeiten!");
-        }
-
+        // Dynamische Navigation: ContentControl mit UserControls aktualisieren
         private void NavigateToCharacter(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Charakterseite anzeigen!");
+            MainContentArea.Content = new Views.CharacterView();
+        }
+
+        private void EditQuickAccess(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Quick-Access bearbeiten wird später implementiert!");
         }
 
         private void NavigateToTalents(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Talentseite anzeigen!");
+            MainContentArea.Content = new Views.TalentsView();
         }
 
         private void NavigateToSpells(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Zauberseite anzeigen!");
+            MainContentArea.Content = new Views.SpellsView();
         }
 
         private void NavigateToEquipment(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ausrüstungsseite anzeigen!");
+            MainContentArea.Content = new Views.EquipmentView();
         }
 
         private void NavigateToInventory(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Inventarseite anzeigen!");
+            MainContentArea.Content = new Views.InventoryView();
         }
 
         private void NavigateToSettings(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Einstellungen anzeigen!");
+            MainContentArea.Content = new Views.SettingsView();
         }
     }
 }

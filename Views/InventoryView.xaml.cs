@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DSAEditor
+namespace DSAEditor.Views
 {
     /// <summary>
-    /// Interaktionslogik für InventoryPage.xaml
+    /// Interaktionslogik für InventoryView.xaml
     /// </summary>
-    public partial class InventoryPage : UserControl
+    public partial class InventoryView : UserControl
     {
-        public InventoryPage()
+        public InventoryView()
         {
             InitializeComponent();
         }
