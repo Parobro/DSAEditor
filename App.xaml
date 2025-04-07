@@ -5,11 +5,41 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+
+            <!-- Farben -->
             <SolidColorBrush x:Key="BackgroundBrush" Color="#202124"/>
             <SolidColorBrush x:Key="SidebarBrush" Color="#292A2D"/>
             <SolidColorBrush x:Key="ContentBrush" Color="White"/>
             <SolidColorBrush x:Key="TextBrush" Color="White"/>
+
+            <!-- Stil für Sidebar Buttons -->
+            <Style x:Key="SidebarButton" TargetType="Button">
+                <Setter Property="Background" Value="#2D2D30"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="5,2"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#3E3E42"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#1B1B1C"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
-
 </Application>
+

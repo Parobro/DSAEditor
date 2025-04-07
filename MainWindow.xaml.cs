@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Win32;
 using DSAEditor.Views;
+using System.Windows.Input;
 
 
 namespace DSAEditor
@@ -96,6 +97,35 @@ namespace DSAEditor
         private void EditQuickAccess(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Quick-Access bearbeiten wird später implementiert!");
+        }
+
+        private void QuickAccess_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string itemName = e.Data.GetData(DataFormats.StringFormat).ToString();
+                if (!string.IsNullOrEmpty(itemName))
+                {
+                    QuickAccessList.Items.Add(new ListBoxItem { Content = itemName });
+                }
+            }
+        }
+
+        private void QuickAccessList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (QuickAccessList.SelectedItem is ListBoxItem selectedItem)
+            {
+                QuickAccessList.Items.Remove(selectedItem);
+            }
+        }
+
+        // Methode für Drag & Drop von Items aus anderen Listen (z. B. Talente, Zauber)
+        private void Item_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed && sender is ListBoxItem item)
+            {
+                DragDrop.DoDragDrop(item, item.Content.ToString(), DragDropEffects.Copy);
+            }
         }
 
         private void NavigateToTalents(object sender, RoutedEventArgs e)

@@ -54,13 +54,43 @@
             </Grid.ColumnDefinitions>
 
             <!-- Sidebar (Navigation) -->
-            <StackPanel Background="LightBlue" Grid.Column="0">
-                <Button Content="Charakter" Click="NavigateToCharacter"/>
-                <Button Content="Talente" Click="NavigateToTalents"/>
-                <Button Content="Zauber" Click="NavigateToSpells"/>
-                <Button Content="Ausrüstung" Click="NavigateToEquipment"/>
-                <Button Content="Inventar" Click="NavigateToInventory"/>
-                <Button Content="Einstellungen" Click="NavigateToSettings"/>
+            <StackPanel Background="#2D2D30" Grid.Column="0">
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToCharacter">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/charakter.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Charakter"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToTalents">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/talente.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Talente"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToSpells">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/zauber.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Zauber"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToEquipment">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/ausrüstung.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Ausrüstung"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToInventory">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/inventar.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Inventar"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource SidebarButton}" Click="NavigateToSettings">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Icons/einstellungen.png" Width="16" Height="16" Margin="0,0,10,0"/>
+                        <TextBlock Text="Einstellungen"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
 
             <!-- Grid-Splitter für Sidebar -->
@@ -75,16 +105,12 @@
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
             <!-- Schnellzugriff (Favoriten) -->
-            <StackPanel Grid.Column="4" Background="LightGray">
+            <StackPanel Grid.Column="4" Background="LightGray" AllowDrop="True" Drop="QuickAccess_Drop">
                 <TextBlock Text="Schnellzugriff" FontSize="16" FontWeight="Bold"/>
-                <ListBox x:Name="QuickAccessList">
-                    <ListBoxItem Content="Feuerball"/>
-                    <ListBoxItem Content="Schwertkampf"/>
-                    <ListBoxItem Content="Schildparade"/>
-                </ListBox>
-                <Button Content="Bearbeiten" Click="EditQuickAccess"/>
+                <ListBox x:Name="QuickAccessList" SelectionMode="Single" MouseDoubleClick="QuickAccessList_MouseDoubleClick"/>
             </StackPanel>
-
         </Grid>
+        
     </Grid>
+    
 </Window>
